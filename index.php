@@ -6,7 +6,8 @@ use App\Animal;
 use App\Food;
 use Symfony\Component\Console\Helper\ProgressBar;
 use Symfony\Component\Console\Output\ConsoleOutput;
-function progressBar():void
+
+function progressBar(): void
 {
     $output = new ConsoleOutput();
     $total = 100;
@@ -31,7 +32,7 @@ class Zookeeper
         $this->foods = $foods;
     }
 
-    public function start():void
+    public function start(): void
     {
         echo "Zookeeper started!\n";
         $keepWorking = true;
@@ -42,10 +43,10 @@ class Zookeeper
                 echo "$index. {$animal->getName()}\n";
 
             }
-            $quit = (array_key_last($this->animals)+1).". Quit\n";
+            $quit = (array_key_last($this->animals) + 1) . ". Quit\n";
             echo $quit;
 
-            $animalIndex =(int) readline("Please select options : \n");
+            $animalIndex = (int)readline("Please select options : \n");
             if ($animalIndex == $quit) {
                 exit;
             }
